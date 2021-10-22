@@ -1,0 +1,184 @@
+package kingdomofwind;
+
+import java.util.Scanner;
+
+
+public class User{
+
+	// 모든 캐릭터는 이름, HP, MP, 레벨 변수를 가지고 있다.
+	public String name;
+	public int hp;
+	public int mp;
+	public int level;
+
+}
+
+class Player extends User {
+
+	//플레이어는  힘, 방어력, 돈, 경험치라는 변수를 가지고 있다.
+	public int power;
+	public int defense;
+	public int money = 0;
+	public int experience = 0;
+
+	// 공격을 하는 함수
+	public int attack(){
+		
+		return power;
+	}
+
+	// 공격을 받는 함수
+	public void attacked(int sum) {
+
+		// 방어력이 받은 데미지보다 큰 경우
+		if (defense >= sum)
+			hp = hp - 0;
+		else
+			hp = hp + defense - sum;
+	}
+}
+
+// 몬스터
+	class Monster extends User {
+	public String name;
+	public int hp;
+	public int mp;
+	public int level;
+	public int power;
+	public int defense;
+	public int money;
+	public int experience;
+	public int attack() {
+		return power;
+	}
+
+	// 공격 받는 함수
+	public void attacked(int sum){
+
+		// 방어력이 받은 데미지보다 큰 경우
+		if (defense >= sum) 
+			hp = hp - 0;
+
+		else 
+			hp = hp + defense - sum;
+	
+	}
+	}
+	// 플레이어 클래스
+	 class P1 extends Player{
+
+		 // 공격을 하는 함수
+		public int attack(){
+			Scanner scanner = new Scanner(System.in);
+			System.out.println("1. 돌로 찍기");
+			System.out.println("2. 나뭇가지로 때리기");
+			System.out.print("무슨 공격을 하시겠어요?  ");
+			 int number = scanner.nextInt();
+
+			int sum = 0;
+
+			if (number == 1) {
+				sum += level * 10;
+				sum += power * 10;
+				sum += defense * 10;
+				System.out.println("출혈량이 " + sum + "입니다.");
+				return sum;
+			}
+			else if(number == 2)
+			{
+				sum += level * 10;
+				sum += power * 20;
+				sum += defense * 10;
+				System.out.println("출혈량이 " + sum + "입니다.");
+				return sum;
+			}
+			System.out.println("출혈량이 " + sum + "입니다.");
+			return sum;
+		}
+
+		// 공격을 받는 함수
+		public void attacked(int sum) {
+			// 방어력이 받은 데미지보다 큰 경우
+			if (defense >= sum) 
+				hp = hp - 0;
+			 else {
+				hp = hp + defense - sum;
+			}
+		}
+
+		public class  GreenSnake extends Monster {
+			// 초록뱀이 공격을 하는 함수
+			public int attack() {
+				System.out.println("데미지는 " + power + "입니다.");
+				return power;
+			}
+
+			public void attacked(int sum) {
+				// 방어력이 받은 데미지보다 큰 경우
+				if (defense >= sum) 
+					hp = hp - 0;
+					else 
+					hp = hp + defense - sum;
+				
+			}
+
+		}
+		
+		class WildPig extends Monster{
+			// 야생 맷돼지공격을 하는 함수
+			public int attack(){
+				System.out.println("데미지는 " + power + "입니다.");
+				return power;
+			}
+
+			public void attacked(int sum){
+				// 방어력이 받은 데미지보다 큰 경우
+				if (defense >= sum)
+					hp = hp - 0;
+				  else 
+					hp = hp + defense - sum;
+				
+			}
+
+		}
+		
+		 class Chicken extends Monster {
+			// 야생 닭 공격을 하는 함수
+			public int attack() {
+				System.out.println("데미지는 " + power + "입니다.");
+				return power;
+			}
+
+			public void attacked(int sum) {
+				// 방어력이 받은 데미지보다 큰 경우
+				if (defense >= sum) 
+					hp = hp - 0;
+				  else 
+					hp = hp + defense - sum;
+				
+			}
+
+		}
+		
+		 class WildRaccoon extends Monster {
+			// 야생 라쿤 공격을 하는 함수
+			public int attack() {
+				System.out.println("데미지는 " + power + "입니다.");
+				return power;
+			}
+
+			public void attacked(int sum) {
+				// 방어력이 받은 데미지보다 큰 경우
+				if (defense >= sum) 
+					hp = hp - 0;
+			 	 else 
+					hp = hp + defense - sum;
+				
+			}
+
+		}	
+		
+		
+		
+		
+	}

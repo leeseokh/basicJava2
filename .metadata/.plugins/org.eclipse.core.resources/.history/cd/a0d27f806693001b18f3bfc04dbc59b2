@@ -1,0 +1,5 @@
+package kingdomofwind;
+
+public class Chicken extends Monster {
+
+}

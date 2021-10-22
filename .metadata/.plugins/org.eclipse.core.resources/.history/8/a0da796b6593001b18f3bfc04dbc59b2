@@ -1,0 +1,20 @@
+//package kingdomofwind;
+//
+//import java.io.InputStream;
+//import java.util.Scanner;
+//
+//public class ScanUtil {
+//	private static Scanner sc = new Scanner(System.in);
+//	
+//	public ScanUtil(InputStream in) {
+//		
+//	}
+//	public static String nextLine(){
+//		return sc.nextLine();
+//	}
+//	public static int nextInt(){
+//		return Integer.parseInt(sc.nextLine());
+//	}
+//	
+//}
+//

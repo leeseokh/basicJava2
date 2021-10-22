@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item value="8" key="DIALOG_Y_ORIGIN"/>
+		<item value="608" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.internal.QuickAccess">
+		<item value="759" key="dialogHeight"/>
+		<item value="1440" key="dialogWidth"/>
+		<list key="textEntries">
+			<item value="3"/>
+			<item value="1"/>
+			<item value="1"/>
+		</list>
+		<list key="orderedElements">
+			<item value="org.eclipse.ui.console.ConsoleView"/>
+			<item value="com.tomato.exerd.modelview3.ModelView3"/>
+			<item value="com.tomato.exerd.ui.views.thumbnail"/>
+		</list>
+		<list key="orderedProviders">
+			<item value="org.eclipse.e4.ui.parts"/>
+			<item value="org.eclipse.e4.ui.parts"/>
+			<item value="org.eclipse.e4.ui.parts"/>
+		</list>
+		<list key="textArray">
+			<item value="cons"/>
+			<item value="c"/>
+			<item value="co"/>
+			<item value="모델"/>
+			<item value="썸네일"/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.jdt.ui.wizards.JavaProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.datatools.connectivity"/>
+			<item value="org.eclipse.team.cvs.ui.newWizards"/>
+			<item value="org.eclipse.jdt.ui.java"/>
+			<item value="org.eclipse.jdt.ui.java/org.eclipse.jdt.junit"/>
+			<item value="org.eclipse.jst.j2ee.internal"/>
+		</list>
+	</section>
+</section>

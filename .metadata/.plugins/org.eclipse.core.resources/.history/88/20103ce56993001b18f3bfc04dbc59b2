@@ -1,0 +1,197 @@
+package kingdomofwind;
+
+import java.util.Scanner;
+
+
+public class PlayGame{
+
+		 public static void main(String[] args){
+			 Scanner scanner = new Scanner(System.in);
+			 Player Jungler =new Player();
+			 
+		  // 기본 세팅
+		  System.out.println("*******************************");
+		  System.out.println("******** 정글에서 살아남기 ********");
+		  System.out.println("*******************************");
+		  System.out.println("1.시작");
+		  System.out.print("숫자를 입력해주세요: ");
+		  int number = scanner.nextInt();
+		  	
+		  //human 선택
+		  if(number == 1){
+			  System.out.println("선택 됐습니다.");
+		   Jungler = new P1();
+		   Jungler.defense = 25;
+		   Jungler.power = 30;
+		   Jungler.level = 1;
+		   Jungler.hp = 300;
+		   Jungler.mp = 0;
+		  }
+		 
+		  System.out.print("닉네임 입력:");
+		  Jungler.name = scanner.next();
+		  System.out.println("닉네임 설정완료. 게임 시작.");
+		  // 게임 시작
+		  while(true)
+		  {
+		   // 캐릭터의 능력치 보여주기
+		   System.out.println("NAME: " + Jungler.level);
+		   System.out.println("LEVEL: " + Jungler.level);
+		   System.out.println("공격력 : " + Jungler.power);
+		   System.out.println("방어력 : " + Jungler.defense);
+		   System.out.println(" HP : " + Jungler.hp);
+		   System.out.println(" MP : " + Jungler.mp);
+		   System.out.println(" MONEY : " + Jungler.money + "원");
+		   System.out.println(" 경험치 : " + Jungler.experience);
+		   
+		   
+
+		   // 이동 경로 선택
+		   System.out.println("1. 사냥터");
+		   System.out.println("2. 포션상점");
+		   System.out.println("3. 종료");
+		   System.out.print("선택할 번호를 입력하세요.");
+		   number = scanner.nextInt();
+		 
+		    // 사냥터에 입장
+		   if(number == 1){
+			Monster monster = new Monster();
+		    System.out.println("정글에 떨어졌습니다.");
+		    System.out.println("1. 초록뱀");
+		    System.out.println("2. 맷돼지");
+		    System.out.println("3. 닭");
+		    System.out.println("4. 야생너구리");
+		    System.out.print("오늘의 저녁을 고르세요 : ");
+		    number = scanner.nextInt();
+		   
+		    // 초록뱀 전투
+		    if(number == 1){
+		  
+
+		     monster.name = "초록뱀";
+		     monster.hp = 80;
+		     monster.mp = 0;
+		     monster.level = 1;
+		     monster.power = 5;
+		     monster.defense = 5;
+		     monster.money = 10;
+		     monster.experience = 10;
+		    }
+		   
+		    // 맷돼지와 전투하는 경우
+		    if(number == 2){
+		    	
+
+		     monster.name = "맷돼지";
+		     monster.hp = 650;
+		     monster.mp = 0;
+		     monster.level = 5;
+		     monster.power = 10;
+		     monster.defense = 20;
+		     monster.money = 30;
+		     monster.experience = 50;
+		    }
+		    // 닭과 전투하는 경우
+		    if(number == 3){
+		    
+
+		     monster.name = "닭";
+		     monster.hp = 1000;
+		     monster.mp = 0;
+		     monster.level = 10;
+		     monster.power = 10;
+		     monster.defense = 15;
+		     monster.money = 50;
+		     monster.experience = 100;
+		    }
+		    // 야생라쿤과 전투하는 경우
+		    if(number == 4){
+		    
+
+		     monster.name = "야생너구리";
+		     monster.hp = 1000;
+		     monster.mp = 0;
+		     monster.level = 30;
+		     monster.power = 1000;
+		     monster.defense = 80;
+		     monster.money = 200;
+		     monster.experience = 300;
+		    }
+		  
+		 // 전투 시작
+		    while(true){
+		    
+		     System.out.println("공격합니다.");
+		     monster.attacked(Jungler.attack());
+		     // 대상의 체력이 0보다 작거나 같은 경우
+		     if(monster.hp <= 0){
+		     
+		      System.out.println("짐승이 죽었습니다.");
+		      Jungler.experience += monster.experience;
+		      Jungler.money += monster.money;
+		      break;
+		     }
+		     System.out.println("짐승의 공격입니다.");
+		     Jungler.attacked(monster.attack());
+		     // 플레이어 체력이 0보다 작거나 같은 경우
+		     if(Jungler.hp <= 0){
+		     
+		      System.out.println("당신은 죽었습니다.");
+		      // 플레이어 체력을 1로 만듬
+		      Jungler.hp = 1;
+		      System.out.println("당신은 체력 " + Jungler.hp + "으로 부활했습니다.");
+		      break;
+		     }		   
+		    }    
+		   }
+		   //상점
+		    else if(number == 2){  
+		
+		    Market potion = new Market();
+		    System.out.println("마켓에 입장하였습니다.");
+		    System.out.println("1. 바나나(100원)");
+		    System.out.println("2. 사과(100원)");
+		    System.out.println("3. 멜론(200원)");
+		    System.out.println("4. 고기(50원)");
+		    System.out.println("5. 물(50원)");
+		    System.out.print("원하시는 물건을 입력하세요 : ");
+		    number = scanner.nextInt();
+		    int temp = Jungler.money;
+		 	
+		 	if((Jungler.money = potion.show(Jungler.money, number)) != -1){
+		    
+		     System.out.println("구입이 완료되었습니다.");
+		     if(number == 1)
+		    	 Jungler.power += 5;
+		     if(number == 2)
+		    	 Jungler.defense += 5;
+		     if(number == 3)
+		    	 Jungler.experience += 50;
+		     if(number == 4)
+		    	 Jungler.hp += 50;
+		     if(number == 5)
+		    	Jungler.mp += 50;
+		     else{	  
+		    
+		     System.out.println("돈이 부족합니다.");
+		     Jungler.money = temp;
+		    }
+	    	}
+		 	if(Jungler.experience >= Jungler.level * 100){
+		   
+			   
+		    Jungler.level += 1;
+		    
+		    System.out.println(" 레벨이 " + Jungler.level + "이 되었습니다.");
+		    
+		    Jungler.money += Jungler.level * 50;
+		   
+		    System.out.println("레벨업으로 돈이" + Jungler.level * 50 + "원 증가했습니다.");
+		    
+		    Jungler.experience = 0;
+		   	}
+		   
+		    } 
+}		
+}	 
+}
